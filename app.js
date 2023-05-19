@@ -12,6 +12,28 @@ function PageTransitions() {
             this.className += ' active-btn';
         })
     }
-}
 
+    // Sections Active
+    allSections.forEach((section) => {
+        section.addEventListener('click', (e) => {
+            const id = e.target.dataset.id;     // returns values from data-id like about, portfolio, contact etc.
+            if (id) {
+                // remove selected from the other btns
+                sectBtns.forEach((btn) => {
+                    btn.classList.remove('active');
+                })
+                e.target.classList.add('active');
+
+                // hide other sections
+                sections.forEach((section) => {
+                    section.classList.remove('active')
+                })
+                
+                const element = document.getElementById(id)
+                element.classList.add('active');
+            }
+        })
+    });
+
+}
 PageTransitions()
