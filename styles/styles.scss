@@ -1,14 +1,15 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;                 // box-sizing property is used to control how the total width and height of an element are calculated. When using the value border-box, the width and height of the element include the content, padding, and border, all together.
-    list-style: none;                       // The CSS rule * {list-style: none;} targets all elements on a webpage and removes the default bullet points or numbering associated with HTML lists.
+    box-sizing: border-box; // box-sizing property is used to control how the total width and height of an element are calculated. When using the value border-box, the width and height of the element include the content, padding, and border, all together.
+    list-style: none; // The CSS rule * {list-style: none;} targets all elements on a webpage and removes the default bullet points or numbering associated with HTML lists.
 }
 
-:root {                                     // the :root selector is used to target the root element of an HTML document, which is typically the <html> tag. The :root selector is equivalent to selecting the html element in regular CSS.
+:root {
+    // the :root selector is used to target the root element of an HTML document, which is typically the <html> tag. The :root selector is equivalent to selecting the html element in regular CSS.
     --color-primary: #191d2b;
-    --color-secondary: #27AE60;
-    --color-white: #FFFFFF;
+    --color-secondary: #27ae60;
+    --color-white: #ffffff;
     --color-black: #000;
     --color-grey0: #f8f8f8;
     --color-grey-1: #dbe1e8;
@@ -18,12 +19,12 @@
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
     --br-sm-2: 14px;
-    --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+    --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
 }
 
 .light-mode {
-    --color-primary: #FFFFFF;
-    --color-secondary: #F56692;
+    --color-primary: #ffffff;
+    --color-secondary: #f56692;
     --color-white: #454e56;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -37,17 +38,17 @@
 
 body {
     background-color: var(--color-primary); // taken from above
-    font-family: 'Poppins', sans-serif;     // copied from googlefonts 
-    font-size: 1.1rem;                      // The rem unit stands for "root em" and is relative to the font size of the root element (usually the <html> tag). In this case, 1.1rem means that the font size of the <body> element will be 1.1 times the font size of the root element.
-    color: var(--color-white);              // by default the text color inside the body will be white.
-    transition: all .4s ease-in-out;        // all -> applies to all the properties of the <body> element, ease-in-out defines the timing function of the transition effect.   
+    font-family: "Poppins", sans-serif; // copied from googlefonts
+    font-size: 1.1rem; // The rem unit stands for "root em" and is relative to the font size of the root element (usually the <html> tag). In this case, 1.1rem means that the font size of the <body> element will be 1.1 times the font size of the root element.
+    color: var(--color-white); // by default the text color inside the body will be white.
+    transition: all 0.4s ease-in-out; // all -> applies to all the properties of the <body> element, ease-in-out defines the timing function of the transition effect.
 }
 
 a {
-    display: inline-block;                  // Element will flow inline with other elements but stil have a width and height, and other block-level properties can be applied to it.
-    text-decoration: none;                  // removes any text decoration, such as underlines, overlines, or line-through.
-    color: inherit;                         // inherited from body
-    font-family: inherit;                   // Inherited from body 
+    display: inline-block; // Element will flow inline with other elements but stil have a width and height, and other block-level properties can be applied to it.
+    text-decoration: none; // removes any text decoration, such as underlines, overlines, or line-through.
+    color: inherit; // inherited from body
+    font-family: inherit; // Inherited from body
 }
 header {
     height: 100vh;
@@ -61,51 +62,45 @@ section {
     position: absolute;
     left: 0;
     top: 0;
-    padding: 3rem 18rem;                    // 3rem (top and bottom), 18rem (left and right)
+    padding: 3rem 18rem; // 3rem (top and bottom), 18rem (left and right)
 }
 
 .section {
     transform: translateY(-100%) scale(0);
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
     background-color: var(--color-primary);
 }
 
 .sec1 {
     display: None;
     transform: translateY(0) scaleY(1);
-    background-color: slateblue;
 }
 .sec2 {
     display: none;
     transform: translateY(0) scaleY(1);
-    background-color: green;
 }
 .sec3 {
     display: none;
     transform: translateY(0) scaleY(1);
-    background-color: pink;
 }
 .sec4 {
     display: none;
     transform: translateY(0) scaleY(1);
-    background-color: blue;
 }
 .sec5 {
     display: none;
     transform: translateY(0) scaleY(1);
-    background-color: rebeccapurple;
 }
 .active {
     display: block;
     animation: scaleAnim 1s ease-in-out;
     @keyframes scaleAnim {
-        0%{
+        0% {
             transform: translateY(-100%) scaleY(0);
         }
-        100%{
+        100% {
             transform: translateY(0) scaleY(1);
         }
-
     }
 }
 
@@ -114,7 +109,7 @@ section {
     position: fixed;
     z-index: 10;
     top: 50%;
-    right:3%;
+    right: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,22 +117,22 @@ section {
     transform: translateY(-50%);
     .active-btn {
         background-color: var(--color-secondary) !important;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
         i {
             color: var(--color-white) !important;
         }
     }
     .control {
-        display: flex;                          // justify & align wasn't working because somewhere the display:block was set so I had to add this new line
+        display: flex; // justify & align wasn't working because somewhere the display:block was set so I had to add this new line
         padding: 1rem;
         cursor: pointer;
         background-color: var(--color-grey-4);
-        width: 55px;;
-        height: 55px;;
+        width: 55px;
+        height: 55px;
         border-radius: 50%;
         justify-content: center;
         align-items: center;
-        margin: .7rem;
+        margin: 0.7rem;
         box-shadow: var(--box-shadow-1);
         i {
             font-size: 1.2rem;
@@ -147,3 +142,326 @@ section {
     }
 }
 
+/* Header-content*/
+.header-content {
+    display: grid;
+    grid-template-columns: repeat(
+        2,
+        1fr
+    ); // repeat(2, 1fr) means that the pattern 1fr should be repeated twice. The value 1fr is a flexible unit that represents a fraction of the available space in the grid container. So, each column will take up an equal fraction of the available space, resulting in both columns having the same width.
+    height: 100%;
+    .left-header {
+        display: flex;
+        align-items: center;
+        position: relative;
+        .h-shape {
+            transition: all 0.4s ease-in-out;
+            width: 65%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%); // generated online
+        }
+        .image {
+            border-radius: var(--br-sm-2);
+            height: 90%;
+            width: 68%;
+            margin-left: 4rem;
+            background-color: var(--color-black);
+            transition: all 0.4s ease-in-out;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: all 0.4s ease-in-out;
+                filter: grayscale(100%);
+                &:hover {
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+    .right-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 18rem;
+        .name {
+            font-size: 3rem;
+            span {
+                color: var(--color-secondary);
+            }
+        }
+        p {
+            margin: 1.5rem 0;
+            line-height: 2rem;
+        }
+    }
+}
+
+/* About */
+
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+    .right-about {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        .about-item {
+            border: 1px solid var(--color-grey-5);
+            border-radius: 5px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+            &:hover {
+                cursor: default;
+                transform: translateY(-5px);
+                border: 1px solid var(--color-secondary);
+                box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.32);
+            }
+            .abt-text {
+                padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                .large-text {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: var(--color-secondary);
+                }
+                .small-text {
+                    padding-left: 3rem;
+                    position: relative;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    color: var(--color-grey-1);
+                    letter-spacing: 2px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 15px;
+                        width: 2rem;
+                        height: 2px;
+                        background-color: var(--color-grey-5);
+                    }
+                }
+            }
+        }
+    }
+    .left-about {
+        padding-right: 5rem;
+        p {
+            line-height: 2rem;
+            padding: 1rem;
+            color: var(--color-grey-1);
+        }
+        h4 {
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.about-stats {
+    padding-bottom: 4rem;
+    .progress-bars {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+        .progress-bar {
+            display: flex;
+            flex-direction: column;
+            .prog-title {
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            .progress-con {
+                display: flex;
+                align-items: center;
+                .prog-text {
+                    color: var(--color-grey-2);
+                }
+                .progress {
+                    width: 100%;
+                    height: 0.45rem;
+                    background-color: var(--color-grey-4);
+                    margin-left: 1rem;
+                    position: relative;
+                    span {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        background-color: var(--color-secondary);
+                        transition: all 0.4s ease-in-out;
+                    }
+                    .html {
+                        width: 80%;
+                    }
+                    .css {
+                        width: 95%;
+                    }
+                    .js {
+                        width: 75%;
+                    }
+                    .react {
+                        width: 60%;
+                    }
+                    .python {
+                        width: 85%;
+                    }
+                    .java {
+                        width: 85%;
+                    }
+                    .node {
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.stat-title {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 3.5rem 0;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 40%;
+        height: 1px;
+        background-color: var(--color-grey-5);
+        transform: translateX(-50%);
+    }
+}
+
+/* Timeline */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    gap: 25px;
+    .timeline-item {
+        position: relative;
+        padding-left: 3rem;
+        border-left: 1px solid var(--color-grey-5);
+        .tl-icon {
+            //icon
+            position: absolute;
+            left: -27px;
+            top: 0;
+            background-color: var(--color-secondary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                font-size: 1.3rem;
+            }
+        }
+        .tl-duration {
+            padding: 0.2rem 0.6rem;
+            background-color: var(--color-grey-5);
+            border-radius: 15px;
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        h5 {
+            padding: 1rem 0;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            font-weight: 600;
+            span {
+                color: var(--color-grey-2);
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+        }
+        p {
+            color: var(--color-grey-2);
+        }
+    }
+}
+
+/* Independent components*/
+.btn-con {
+    display: flex;
+    align-self: flex-start;
+}
+.main-btn {
+    border-radius: 25px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-secondary);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    overflow: hidden;
+    .btn-text {
+        padding: 0 2rem;
+    }
+    .btn-icon {
+        background-color: var(--color-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        transition: all 0.4s ease-out;
+        z-index: -1; // Imp: Check what happens if its not there
+    }
+    &:hover {
+        &::before {
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            transform: translateX(0);
+        }
+    }
+}
+
+.main-title {
+    text-align: center;
+    h2 {
+        position: relative;
+        text-transform: uppercase;
+        font-size: 4rem;
+        font-weight: 700;
+        span {
+            color: var(--color-secondary);
+        }
+        .bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: var(--color-grey-5);
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            font-weight: 800;
+            font-size: 6.3rem;
+        }
+    }
+}
