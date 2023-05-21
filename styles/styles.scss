@@ -223,6 +223,34 @@ section {
             margin: 1.5rem 0;
             line-height: 2rem;
         }
+        .contact-icon {
+            display: flex;
+            margin-bottom: 2rem;
+            a {
+                display: flex;
+                align-items: center;
+                color: var(--color-white);
+                cursor: pointer;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin: 0 0.4rem;
+                transition: all 0.4s ease-in-out;
+                &:hover {
+                    background-color: var(--color-secondary);
+                    i {
+                        color: var(--color-primary);
+                    }
+                }
+                i {
+                    display: flex;
+                    align-content: center;
+                    justify-content: center;
+                    font-size: 1.3rem;
+                }
+            }
+        }
     }
 }
 
@@ -642,8 +670,19 @@ section {
             }
         }
         .submit-btn {
-            display: flex;
-            justify-content: flex-start;
+            font-size: inherit;
+            .submit-form {
+                width: fit-content;
+                height: fit-content;
+                padding: 0.4rem 2rem;
+                border-radius: 25rem;
+                color: var(--color-white);
+                font-size: 1.2rem;
+                background-color: var(--color-secondary);
+                &:hover {
+                    transform: translateY(5%);
+                }
+            }
         }
     }
 }
