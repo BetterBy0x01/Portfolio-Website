@@ -688,28 +688,30 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="" class="contact-form">
+                        <form action="https://formspree.io/f/mwkdlybq" method="POST" class="contact-form">
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="email" required placeholder="YOUR EMAIL">
+                                <label>
+                                    <input type="text" name="name" required placeholder="YOUR NAME">
+                                </label>
+                                <label>
+                                    <input type="email" name="email" required placeholder="YOUR EMAIL">
+                                </label>
                             </div>
-                            <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT">
+                            <div style="margin-left:0.5rem" class="input-control">
+                                <label>
+                                    <input type="text" name="subject" required placeholder="ENTER SUBJECT">
+                                </label>
                             </div>
-                            <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                            <div style="margin-left:0.5rem" class="input-control">
+                                <label>
+                                    <textarea name="message" id="" cols="15" rows="8" required placeholder="Message Here..."></textarea>
+                                </label>
                             </div>
                             <div class="submit-btn">
-                                <button class="submit-form">Submit</button>
+                                <label>
+                                    <button type="submit" name="submit-button" class="submit-form">Submit</button>
+                                </label>
                             </div>
-                            <!-- <div class="submit-btn">
-                                <a href="#" class="main-btn">
-                                    <span class="btn-text">Download CV</span>
-                                    <span class="btn-icon">
-                                        <i class="fa-solid fa-download"></i>
-                                    </span>
-                                </a>
-                            </div> -->
                         </form>
                     </div>
                 </div>
